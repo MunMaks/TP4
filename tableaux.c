@@ -60,13 +60,13 @@ int main(void){
     int histo[N] = {0};
 
     sommeTab_V2(tab_test, Resultat, N, nb_tab);
-    /*
+    
     for (int i = 0; i < nb_tab; ++i){
         for (int j = 0; j < N; ++j){
             printf("%d ", tab_test[i][j]);
         }
         printf("\n");
-    }*/
+    }
 
     histogramme(tab_test, nb_tab, N, 21, histo);
     
@@ -109,7 +109,10 @@ void sommeTab_V2(int tab[][N], int Resultat[N], int taille, int nb_tab){
 void histogramme(int tab[][N], int nb_tab, int taille, int n_max, int histo[]){
     int Res[N] = {0};
     sommeTab_V2(tab, Res, N, nb_tab);
-
+    for (int i = 0; i < taille; ++i){
+        printf("%d ", Res[i]);
+    }
+    printf("\n");
     for (int i = 0; i < n_max; ++i){
         for (int j = 0; j < taille; ++j){
             if (Res[j] == i) { ++histo[i]; }
