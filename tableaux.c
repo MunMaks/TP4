@@ -11,8 +11,6 @@ void initArea(int t[], int taille, int max);
 
 int position(int t[], int taille, int x);
 
-void Histogramme(int Note[], int Histo[], int taille);
-
 void histogramme(int tab[][N], int nb_tab, int taille, int n_max, int histo[]);
 
 void sommeTab(int A[], int B[], int Resultat[], int taille);
@@ -41,6 +39,7 @@ int main(void){
     int pos = position(t, N, 75);
     printf("Positon of 75: %d\n", pos);
     */
+    /*sommeTab(A, B, Resultat, N);*/
 
     int graine = 5;
     int nb_tab = 3;
@@ -71,9 +70,6 @@ int main(void){
 
     histogramme(tab_test, nb_tab, N, 21, histo);
     
-
-    /*sommeTab(A, B, Resultat, N);*/
-    
     for (int i = 0; i < N; ++i){
         printf("%d ", histo[i]);
     }
@@ -92,14 +88,6 @@ int position(int t[], int taille, int elt){
     for (int i = 0; i < taille; ++i)
         if (t[i] == elt) { return i; }
     return -1;
-}
-
-void Histogramme(int Note[], int Histo[N], int taille){
-    initArea(Note, N, 20);
-    for (int i = 0; i < 21; ++i){
-        Histo[i] = Note[i];
-        printf("Histo[%d] = %d et Note[%d] = %d\n", i, Histo[i], i, Note[i]);
-    }
 }
 
 void sommeTab(int A[], int B[], int Resultat[], int taille){
